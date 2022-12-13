@@ -1,0 +1,37 @@
+<meta charset="UTF-8">
+<script>
+    function saltarLinea(){
+        document.write("<br>")
+    }
+    function saltotedeLinea(){
+        document.write("<br>")
+        document.write("<br>")
+        document.write("<br>")
+    }
+    function imprimir(frase){
+        document.write(frase)
+        saltarLinea()
+    }
+
+    function calcularIMC(peso1,altura1,nombre1,peso2,altura2,nombre2){
+        imc1 = peso1 / (altura1 * altura1);
+        imc2 = peso2 / (altura2 * altura2);
+        imprimir("El promedio de imc calculado de " + nombre1 + " y " + nombre2 + " es de : " + (imc1 + imc2)/2);
+        
+    }
+    
+    calcularIMC(72,1.72,"Cristian",71,1.72,"Felipe");
+
+
+    saltotedeLinea()
+
+
+    function calcularImc(peso,altura){
+        return (peso / (altura * altura));
+    }
+    
+    imprimir("El  imc calculado de Gabriela y Luisa es de: " + (calcularImc(61,1.63)+ (calcularImc(55,1.60))));
+
+
+
+</script>

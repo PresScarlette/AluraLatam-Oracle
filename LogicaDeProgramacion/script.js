@@ -1,0 +1,1 @@
+window.alert("Ya estas bien loquis");

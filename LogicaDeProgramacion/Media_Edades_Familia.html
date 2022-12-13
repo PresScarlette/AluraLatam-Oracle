@@ -1,0 +1,42 @@
+<meta charset="UTF-8">
+<h1>PROGRAMA - AÑO MUNDIAL DE LA FIFA</h1>
+<script>
+    //Codigo de cajon
+    function saltarLinea(){
+        document.write("<br>")
+    }
+
+    function imprimir(frase){
+        document.write(frase)
+        saltarLinea()
+    }
+    
+    /*nuestro nuevo programa*/
+    
+    var numeroMiembros = parseInt(prompt("Ingrese la cantidad de miembros de su familia")); 
+    var contador = 1;
+    var totalEdades = 0;
+
+    while (contador <= numeroMiembros) {
+
+        edad = parseInt(prompt("Ingrese la edad del familiar"));
+        totalEdades =totalEdades + edad;
+        contador++;
+    }
+
+    mediaEdades = totalEdades/numeroMiembros;
+
+    imprimir("La media de las edades de la familia es " + mediaEdades)
+    imprimir("fin")
+    /* //Esto es el codigo manual
+    var edadPadre= 42;
+    var edadMadre= 38;
+    var edadHijo = 15;
+    var edadHija = 12;
+
+    var totalEdad = edadPadre + edadMadre + edadHijo + edadHija;
+    var mediaEdad = totalEdad/4;
+
+    imprimir("La media de las edades es " +mediaEdad);*/
+
+</script>
