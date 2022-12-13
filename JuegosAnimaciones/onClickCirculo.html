@@ -1,0 +1,31 @@
+<canvas width = "600" height="400"></canvas>
+<script>
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
+
+    pincel.fillStyle = "grey";
+    pincel.fillRect(0,0,600,400)
+
+    //Al hacer click nos dice la pos x y la pox y que dimos dentro del canvas
+    function exibirAlerta(evento){
+        var x = evento.pageX - pantalla.offsetLeft; //devuelve el número de píxeles a la izquierda del elemento actual con respecto al nodo HTMLElement
+        var y = evento.pageY - pantalla.offsetTop; // retorna la distancia del elemento actual respecto al borde superior del nodo offsetParent 
+        console.log(evento); //Lo podemos ver en la consola del desarrollador
+        alert(x + "," + y); //Nos muestra las posiciones en una ventana emergente
+    }
+
+    //Poder dibujar un circulo al hacer click
+    function dibujarCirculo(evento){
+        var x = evento.pageX - pantalla.offsetLeft;
+        var y = evento.pageY - pantalla.offsetTop;
+
+        pincel.fillStyle = "blue";
+        pincel.beginPath(); //Esta función sirve para decirle al contexto del canvas que vamos a empezar a dibujar un camino. No tiene ningún parámetro y por si sola no hace ninguna acción visible en el canvas
+        pincel.arc(x,y,10,0,2*3.14)// Para dibujar arcos o círculos, utilizamos los métodos arc() o arcTo() .
+        pincel.fill();//rellena
+        console.log(x + "," + y);
+    }
+
+    //pantalla.onclick = exibirAlerta;
+    pantalla.onclick = dibujarCirculo;//No se pone los () porque el evento se hace a través de la pagina al hacer click
+</script>
